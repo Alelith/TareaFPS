@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ce7174e08fe4104bb9951980ae1d4ad, type: 3}
+  m_Name: Shotgun
+  m_EditorClassIdentifier: 
+  frames:
+  - {fileID: 2108359690, guid: 1ab6d8f8aaa6f394982d299052ffe357, type: 3}
+  - {fileID: 204809930, guid: 1ab6d8f8aaa6f394982d299052ffe357, type: 3}
+  - {fileID: 1544053060, guid: 1ab6d8f8aaa6f394982d299052ffe357, type: 3}
+  gunImage: {fileID: -516172226, guid: b5db21120f6b91f48ac625eb03de2d6e, type: 3}
+  damageMultiplier: 10
+  recoilTime: 3
+  chargeTime: 6
+  magazineBullets: 2
