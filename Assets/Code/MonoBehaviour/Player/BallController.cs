@@ -11,10 +11,7 @@ public class BallController : MonoBehaviour
 
     private bool isFromPlayer;
 
-    private void Start()
-    {
-        Destroy(gameObject, lifetime);
-    }
+    private void Start() => Destroy(gameObject, lifetime);
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,10 +22,9 @@ public class BallController : MonoBehaviour
         }
         else if (other.CompareTag("Player") && !isFromPlayer) {
             other.GetComponent<PlayerController>().DamagePlayer(Mathf.RoundToInt(damage));
-            //GameObject.Find("HUD").GetComponent<HUDController>().ShowDamageFlash();
             Destroy(this);
         }
-        else
+        else if (other.CompareTag("Map"))
         {
             Destroy(this);
         }

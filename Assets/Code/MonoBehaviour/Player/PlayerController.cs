@@ -22,15 +22,15 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void Start()
-    {
-        //TODO htealth bar
-        //GUIController.instance.UpdateHealthBar(currentLives);
-    }
+    private void Update() => GetInputs();
 
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        GetInputs();
+        if (other.CompareTag("Health"))
+        {
+            currentLives = Mathf.Clamp(currentLives + 5, 0, maxLives);
+            Destroy(other.gameObject);
+        }
     }
 
     /// <summary>

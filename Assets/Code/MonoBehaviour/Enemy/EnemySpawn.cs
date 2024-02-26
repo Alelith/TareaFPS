@@ -16,8 +16,7 @@ public class EnemySpawn : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && spawnCoroutine == null)
-            spawnCoroutine = StartCoroutine(SpawnEnemies());
+        spawnCoroutine ??= StartCoroutine(SpawnEnemies());
     }
 
     private IEnumerator SpawnEnemies()
@@ -40,6 +39,6 @@ public class EnemySpawn : MonoBehaviour
         xPos = Random.Range(transform.position.x - (radius / 2), transform.position.x + (radius / 2));
         zPos = Random.Range(transform.position.z - (radius / 2), transform.position.z + (radius / 2));
         //Vector3 spawnLocation = RandomNavMeshLocation();
-        Instantiate(enemyObject[Random.Range(0, enemyObject.Count - 1)], new Vector3(xPos, 0, zPos), Quaternion.identity); 
+        Instantiate(enemyObject[Random.Range(0, enemyObject.Count)], new Vector3(xPos, transform.position.y, zPos), Quaternion.identity); 
     }
 }

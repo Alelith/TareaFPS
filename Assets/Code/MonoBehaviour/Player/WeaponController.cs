@@ -27,10 +27,7 @@ public class WeaponController : MonoBehaviour
     private int magazines;
     private int bullets;
 
-    private void Awake()
-    {
-        SetupMagazines();
-    }
+    private void Start() => SetupMagazines();
 
     private void Update()
     {
@@ -60,12 +57,12 @@ public class WeaponController : MonoBehaviour
             Weapons.Add(other.GetComponent<WeaponPickup>().Weapon);
             Destroy(other.gameObject);
         }
-        /*else if (other.CompareTag("Magazines") && isPlayer)
+        else if (other.CompareTag("Magazine"))
         {
             currentAmmo += 15;
             SetupMagazines();
             Destroy(other.gameObject);
-        }*/
+        }
     }
 
     private void SetupMagazines()
@@ -127,4 +124,5 @@ public class WeaponController : MonoBehaviour
 
     public List<Weapon> Weapons { get => weapons; set => weapons = value; }
     public int CurrentWeapon { get => currentWeapon; set => currentWeapon = value; }
+    public int CurrentAmmo { get => currentAmmo; set => currentAmmo = value; }
 }

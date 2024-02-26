@@ -70,7 +70,7 @@ public class BaseEnemyBehaviour : MonoBehaviour
     
     protected virtual void Chase()
     {
-        agent.SetDestination(player.transform.position);
+        //<agent.SetDestination(player.transform.position);
         if (!playerIsNear)
             brain.PopState();
     }

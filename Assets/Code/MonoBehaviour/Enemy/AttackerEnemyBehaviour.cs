@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class AttackerEnemyBehaviour : BaseEnemyBehaviour
 {
@@ -23,7 +20,7 @@ public class AttackerEnemyBehaviour : BaseEnemyBehaviour
     private void OnAttackEnter()
     {
         agent.ResetPath();
-        animator.Play("Attack");
+        //animator.Play("Attack");
     }
 
     private void Attack()

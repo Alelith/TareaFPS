@@ -9,7 +9,7 @@ public class StateMachine : MonoBehaviour
 
     private void Awake() => states = new Stack<State>();
 
-    private void Update() => GetCurrentState()?.Execute();
+    private void Update() { if (Time.timeScale != 0) GetCurrentState()?.Execute(); }
 
     public void PushState(Action active, Action onEnter, Action onExit)
     {

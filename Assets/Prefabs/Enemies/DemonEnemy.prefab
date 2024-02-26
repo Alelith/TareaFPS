@@ -112,7 +112,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.6, y: 1.3, z: 0.1}
+  m_Size: {x: 1.6, y: 1.3, z: 0.25}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &7893982199216380793
 Animator:
@@ -222,7 +222,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.44
-  m_BaseOffset: 0.72
+  m_BaseOffset: 0.75
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &5916093580311118337

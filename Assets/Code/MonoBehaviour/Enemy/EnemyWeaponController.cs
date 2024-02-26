@@ -16,9 +16,9 @@ public class EnemyWeaponController : MonoBehaviour
 
     public void Attack(Transform objetive)
     {
-        var bullet = Instantiate(bulletPrefab, outPosition);
+        var bullet = Instantiate(bulletPrefab, outPosition.position, Quaternion.identity);
         bullet.GetComponent<BallController>().IsFromPlayer = false;
 
-        bullet.GetComponent<Rigidbody>().velocity = outPosition.forward * ballSpeed * (-1);
+        bullet.GetComponent<Rigidbody>().velocity = (-1) * ballSpeed * outPosition.forward;
     }
 }
