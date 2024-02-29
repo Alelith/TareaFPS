@@ -2332,7 +2332,12 @@ MonoBehaviour:
   mapsCount: 2
   cursor: {fileID: 2800000, guid: 41d047044191a8343a626de929d5c1be, type: 3}
   cursorClick: {fileID: 2800000, guid: 51bfa772969fad846b7cb23cb2699010, type: 3}
-  scoreTexts: []
+  scoreTexts:
+  - {fileID: 1677562718}
+  - {fileID: 1074504831}
+  - {fileID: 342548239}
+  - {fileID: 579616961}
+  - {fileID: 503818844}
 --- !u!1 &1097625326
 GameObject:
   m_ObjectHideFlags: 0

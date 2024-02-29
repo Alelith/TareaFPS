@@ -32,6 +32,8 @@ public class GUIController : MonoBehaviour
     [Header("Game Over")]
     [SerializeField]
     private GameObject gameOverMenu;
+    [SerializeField]
+    private TextMeshProUGUI finalScoreText;
 
     private CustomAnimator animator;
 
@@ -112,6 +114,8 @@ public class GUIController : MonoBehaviour
 
         Time.timeScale = 0;
 
+        finalScoreText.text = "Your score: " + score.ToString("000000");
+
         gameOverMenu.SetActive(true);
 
         List<int> highScores = new();
@@ -121,8 +125,10 @@ public class GUIController : MonoBehaviour
 
         highScores.Add(score);
         highScores.Sort();
+        highScores.Reverse();
 
-        Debug.Log(highScores);
+        for (int i = 0; i < 5; i++)
+            PlayerPrefs.SetInt("HighScore" + i, highScores[i]);
     }
 
     public void OnResumeSelected()

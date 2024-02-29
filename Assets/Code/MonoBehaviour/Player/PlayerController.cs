@@ -29,7 +29,12 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Health"))
         {
             currentLives = Mathf.Clamp(currentLives + 5, 0, maxLives);
+            GUIController.instance.UpdateLives(currentLives);
             Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("Enemy"))
+        {
+            DamagePlayer(1);
         }
     }
 
@@ -47,12 +52,9 @@ public class PlayerController : MonoBehaviour
     public void DamagePlayer(int quantity)
     {
         currentLives -= (quantity / defense);
-        GUIController.instance.UpdateLives(currentLives);
         if (currentLives <= 0)
-        {
-            //TODO : GameManager , HUD
-            Debug.Log("GAME OVER!!!");
-        }
+            GUIController.instance.EndGame();
+        GUIController.instance.UpdateLives(currentLives);
             
     }
 

@@ -37,9 +37,6 @@ public class PlayerMovement : MonoBehaviour
         Move();
 
         GetInputs();
-
-        Debug.Log(Time.deltaTime);
-        Debug.Log(currentStamina);
     }
 
     private void GetInputs()
